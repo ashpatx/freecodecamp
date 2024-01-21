@@ -6,15 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="styles.css" />
   <title>Palindrome Checker</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <h1>Is it a Palindrome?</h1>
+  <h1 class="title mainFont">is it a <span class="highFont">palindrome?</span>
+  </h1>
   <form>
-    <label for="text-input">Type any word</label><br>
-    <input id="text-input"></input>
-    <button onclick="checkPalindrome()" id="check-btn">Check</button>
-    <div id="result">Result</div>
+    <label for="text-input">type any word</label><br>
+    <input id="text-input" placeholder="madam" />
+    <button onclick="checkPalindrome()" id="check-btn">check!</button>
+    <div id="result"></div>
   </form>
 
   <script src="script.js"></script>
