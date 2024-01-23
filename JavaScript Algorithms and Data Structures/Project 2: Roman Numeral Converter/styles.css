@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;font-family:"Quattrocento",sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(15, 23, 42);
+  background-clip: padding-box;
+backdrop-filter: blur(4px); 
+background-image: radial-gradient(at 92% 100%, rgb(39, 39, 42) 0, transparent 100%),
+                  radial-gradient(at 66% 60%, rgb(14, 165, 233) 0, transparent 100%),
+                  radial-gradient(at 65% 7%, rgb(132, 204, 22) 0, transparent 92%),
+                  radial-gradient(at 90% 39%, rgb(157, 23, 77) 0, transparent 28%),
+                  radial-gradient(at 61% 28%, rgb(63, 63, 70) 0, transparent 100%);
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 600;
+  color: rgba(255, 191, 0, 0.8);
+}
+
+.formContainer {
+  margin-top:1rem;
+  width: 25%;
+}
+
+form {
+  color: rgba(255, 214, 0, 0.8);
+  gap:0.5rem;
+  width:100%;
+  display:flex;flex-direction:column; justify-content:center;
+  align-items:center;
+  background-color: rgb(63, 63, 70);
+  padding:0.5rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 10px 10px 4px rgb(39, 39, 42,0.9);
+  margin: 0 auto; 
+}
+
+.giphy-embed{border-radius:50%;
+}
+
+label {
+  font-weight:600;
+  font-size:1.25rem;
+}
+
+input {
+  background-color: #f2f2f2;
+  padding: 0.25rem 0.5rem;
+  border: 1px;
+  border-radius: 5px;
+  font-size:1rem;
+  width:100%;
+}
+
+input :: placeholder {
+  font-size:1rem;
+}
+
+button {
+  padding: 0.25rem 0.5rem;
+  border: 1px;
+  width:100%;
+  border-radius: 5px;
+  background-color: rgba(255, 191, 0, 0.8);
+  color:black;
+  font-size:1rem;
+}
