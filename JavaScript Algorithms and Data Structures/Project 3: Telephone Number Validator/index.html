@@ -3,25 +3,36 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Telephone Number Validator</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.min.css" />
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <title>Telephone Number Validator
+  </title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quattrocento&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <!-- Canvas -->
   <section>
+    <!--Razr Phone Background-->
     <div class="bg">
     </div>
-    <div class="overlay">
-      <iframe src="https://giphy.com/embed/l2Sq8BNJpTcnTLyIU" class="doodle"></iframe>
+
+    <!--Telephone Validator Container-->
+    <h1>Telephone Number Validator
+    </h1>
+    <div class="formContainer">
+      <form>
+        <input id="user-input" placeholder="Phone Number" />
+        <button type="button" onclick="phoneCheck()" id="check-btn">Check</button>
+        <button type="button" onclick="clearNumber()" id="clear-btn">Clear</button>
+        <div id="results-div"></div>
+      </form>
     </div>
   </section>
 
+  <script src="script.js"></script>
 </body>
 
 </html>
