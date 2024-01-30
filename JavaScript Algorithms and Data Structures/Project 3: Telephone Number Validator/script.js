@@ -1,10 +1,10 @@
 const phoneCheck = (str) => {
   const validPatterns = [
-    //1 555-555-5555 Valid! 
+    //1 555-555-5555 Valid!
     /^1 \d{3}-\d{3}-\d{4}$/,
-      
+
     //1 (555) 555-5555 Valid!
-    /^1 \(\d{3}\) \d{3}-\d{4}$/,
+    /1 \(\d{3}\) \d{3}-\d{4}$/,
 
     //5555555555 Valid!
     /^\d{10}$/,
@@ -13,7 +13,7 @@ const phoneCheck = (str) => {
     /^\d{3}-\d{3}-\d{4}$/,
 
     // (555)555-5555 Valid!
-    /^\(\d{3}\)\d{3}-\d{4}$/,  
+    /^\(\d{3}\)\d{3}-\d{4}$/,
 
     //1(555)555-5555 Valid!
     /1\(\d{3}\)\d{3}-\d{4}/,
@@ -26,12 +26,12 @@ const phoneCheck = (str) => {
   const resultDiv = document.getElementById("results-div");
 
   if (userInput === "") {
-  alert("Please provide a phone number.");
-} else if (validPatterns.some((pattern) => pattern.test(userInput))) {
-  resultDiv.textContent = `Valid US number: ${userInput}`;
-} else {
-  resultDiv.textContent = `Invalid US number: ${userInput}`;
-}
+    alert("Please provide a phone number.");
+  } else if (validPatterns.some((pattern) => pattern.test(userInput))) {
+    resultDiv.innerHTML = `Valid US number:<br>${userInput}`;
+  } else {
+    resultDiv.innerHTML = `Invalid US number:<br>${userInput}`;
+  }
 };
 
 const clearNumber = () => {
