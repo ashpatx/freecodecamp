@@ -19,8 +19,16 @@
 
   <div class="formContainer">
   <form>
+     <label for="item-select">Select an Item:</label>
+      <select id="item-select">
+        <option value="3.26">🪀 Price: $3.26</option>
+        <option value="19.5">🪁 Price: $19.5</option>
+        <option value="105.05">🚲 Price: $105.05</option>
+      </select>
+      <br>
+    <label type="number" for="cash">Enter Cash Amount:</label>
     <input id="cash" placeholder="$" />
-    <button type="button" id="purchase-btn">Purchase</button>
+    <button type="button" id="purchase-btn" onclick="handlePurchase()">Purchase</button>
     <div id="change-due"></div>
   </form>
 </div>
