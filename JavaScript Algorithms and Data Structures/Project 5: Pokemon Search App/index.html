@@ -11,12 +11,12 @@
       rel="stylesheet"
     />
     <link
-    href="https://fonts.googleapis.com/css2?family=VT323:wght@200;300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+      href="https://fonts.googleapis.com/css2?family=VT323:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="header">
+    <div id="header">
       <h1 class="title">Pokémon Library</h1>
       <form id="search-form" role="search">
         <input
@@ -30,47 +30,51 @@
         <button id="search-button" class="searchBtn">Search</button>
       </form>
     </div>
-      <!--Pokemon Library-->
+
+    <!--Pokemon Library-->
+    <div id="results">
       <div id="pokemon-container">
         <div class="titleInfo">
           <span id="pokemon-name"></span>
           <span id="pokemon-id"></span>
         </div>
 
-        <div id="avatar-container" class="avatarContainer">
-        </div>
+        <div id="avatar-container" class="avatarContainer"></div>
 
         <div id="categories">
           <div id="category"></div>
         </div>
       </div>
 
-
-        <!--Eight Item Bento-->
-        <div class="bento">
-          <div id="weight">WEIGHT</div>
-          <div id="height">height</div>
-          <div id="hp">hp</div>
-          <div id="defense">defense</div>
-          <div id="attack">attack</div>
-          <div id="special-attack">sp attack</div>
-          <div id="special-defense">sp defense</div>
-          <div id="speed">speed</div>
-        </div>
-
-
+      <!--Eight Item Bento-->
+      <div class="bento">
+        <div id="weight"></div>
+        <div id="height"></div>
+        <div id="hp"></div>
+        <div id="defense"></div>
+        <div id="attack"></div>
+        <div id="special-attack"></div>
+        <div id="special-defense"></div>
+        <div id="speed"></div>
+      </div>
     </div>
-
     <!--Mesh Gradient SVG Layer-->
-  <svg>
-    <filter id='noiseFilter'>
-      <feTurbulence type='fractalNoise' baseFrequency='1.9' stitchTiles='stitch' />
-      <feColorMatrix in="colorNoise" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0" />
-      <feComposite operator="in" in2="SourceGraphic" result="monoNoise" />
-      <feBlend in="SourceGraphic" in2="monoNoise" mode="screen" />
-    </filter>
-  </svg>
-
+    <svg>
+      <filter id="noiseFilter">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="1.9"
+          stitchTiles="stitch"
+        />
+        <feColorMatrix
+          in="colorNoise"
+          type="matrix"
+          values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"
+        />
+        <feComposite operator="in" in2="SourceGraphic" result="monoNoise" />
+        <feBlend in="SourceGraphic" in2="monoNoise" mode="screen" />
+      </filter>
+    </svg>
 
     <script src="script.js"></script>
   </body>
