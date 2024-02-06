@@ -1,85 +1,81 @@
-const searchInput = document.getElementById('search-input');
-const searchForm = document.getElementById('search-form');
-const pokemonContainer = document.getElementById('pokemon-container');
-const avatarContainer = document.getElementById('avatar-container');
-const categories = document.getElementById('categories');
-const category= document.getElementById('category');
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokémon Library</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=VT323:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="header">
+      <h1 class="title">Pokémon Library</h1>
+      <form id="search-form" role="search">
+        <input
+          id="search-input"
+          type="text"
+          role="search"
+          placeholder="Search Pokemon"
+          class="searchBar"
+          required
+        />
+        <button id="search-button" class="searchBtn">Search</button>
+      </form>
+    </div>
 
-//attributes from api 
-const pokemonName = document.getElementById('pokemon-name');
-const pokemonID = document.getElementById('pokemon-id');
-const weight = document.getElementById('weight');
-const height = document.getElementById('height');
-const avatar = document.getElementById('avatar');
-const hp = document.getElementById('hp');
-const defense = document.getElementById('defense');
-const attack = document.getElementById('attack');
-const specialAttack = document.getElementById('special-attack');
-const specialDefense = document.getElementById('special-defense');      
-const speed = document.getElementById('speed');      
+    <!--Pokemon Library-->
+    <div id="results">
+      <div id="pokemon-container">
+        <div class="titleInfo">
+          <span id="pokemon-name"></span>
+          <span id="pokemon-id"></span>
+        </div>
 
+        <div id="avatar-container" class="avatarContainer"></div>
 
-const runLibrary = async () => {
-  try { 
-    const pokemonInput = searchInput.value.toLowerCase();
-    const response = await fetch(
-      `https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/${pokemonInput}`
-    );
-    const data = await response.json();
-    
-    //format response 
-    const hpStat = data.stats[0].base_stat;
-    const attackStat = data.stats[1].base_stat;
-    const defenseStat = data.stats[2].base_stat;
-    const specialAttackStat = data.stats[3].base_stat;
-    const specialDefenseStat = data.stats[4].base_stat;
-    const speedStat = data.stats[5].base_stat;
+        <div id="categories">
+          <div id="category"></div>
+        </div>
+      </div>
 
-    pokemonName.textContent = `${data.name.toUpperCase()}`;
-    pokemonID.textContent = `${data.id}`;
-    weight.textContent = `Weight: ${data.weight}`;
-    height.textContent = `Height: ${data.height}`;
-    avatarContainer.innerHTML = `<img id="avatar" class="avatarContainer" src="${data.sprites.front_default}" alt="${data.name} front default avatar">`;
+      <!--Eight Item Bento-->
+      <div class="bento">
+        <div id="weight"></div>
+        <div id="height"></div>
+        <div id="hp"></div>
+        <div id="defense"></div>
+        <div id="attack"></div>
+        <div id="special-attack"></div>
+        <div id="special-defense"></div>
+        <div id="speed"></div>
+      </div>
+    </div>
+    <!--Mesh Gradient SVG Layer-->
+    <svg>
+      <filter id="noiseFilter">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="1.9"
+          stitchTiles="stitch"
+        />
+        <feColorMatrix
+          in="colorNoise"
+          type="matrix"
+          values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"
+        />
+        <feComposite operator="in" in2="SourceGraphic" result="monoNoise" />
+        <feBlend in="SourceGraphic" in2="monoNoise" mode="screen" />
+      </filter>
+    </svg>
 
-    //format response: bento grid
-    hp.innerHTML = `<span class="stat-title">HP: </span> ${hpStat}`;
-    attack.innerHTML = `<span class="stat-title">Attack: </span> ${attackStat}`;
-    defense.innerHTML = `<span class="stat-title">Defense: </span> ${defenseStat}`;
-    specialAttack.innerHTML = `<span class="stat-title">Special Attack: </span> ${specialAttackStat}`;
-    specialDefense.innerHTML = `<span class="stat-title">Special Defense: </span> ${specialDefenseStat}`;
-    speed.innerHTML = `<span class="stat-title">Speed: </span> ${speedStat}`;
-
-
-    //data types
-    categories.innerHTML = data.types.map(type => 
-      `<span class="category ${type.type.name}">${type.type.name}</span>`).join('');
-  } catch (err) {
-    updateScreen();
-    alert('Pokémon not found');
-    console.log(`Pokemon alert: ${err}`);
-  }
-};
-
-
-const updateScreen = () => {
-  const avatar = document.getElementById('avatar');
-  if (avatar) avatar.remove();
-
-  //update stats
-  pokemonName.textContent = '';
-  pokemonID.textContent = '';
-  categories.innerHTML = '';
-  weight.textContent = '';
-  height.textContent = '';
-  hp.textContent = '';
-  attack.textContent = '';
-  defense.textContent = '';
-  specialAttack.textContent = '';
-  specialDefense.textContent = '';
-  speed.textContent = '';
-};
-
-searchForm.addEventListener('submit', event => {
-  event.preventDefault();
-  runLibrary();
-});
+    <script src="script.js"></script>
+  </body>
+</html>
