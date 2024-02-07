@@ -1,0 +1,44 @@
+body {
+  font-family:"Manrope", sans-serif;
+}
+
+.input-section{
+  display:flex;
+  flex-direction:column;
+  width:25%;
+}
+
+.input-row {
+  display:flex;
+  gap:1rem;
+}
+
+.customer-label{
+  font-weight:600;
+}
+
+input {
+  font-family: "Manrope", sans-serif;
+  font-size: 1rem;
+  border: none;
+  padding: 0.5rem;
+  background-color: rgb(195, 206, 202, 0.6);
+  color: black;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.check-btn {
+  font-family: "Manrope", sans-serif;
+  font-size: 1rem;
+  border: none;
+  padding: 0.5rem;
+  background-color: rgb(195, 206, 202, 0.6);
+  color: black;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
