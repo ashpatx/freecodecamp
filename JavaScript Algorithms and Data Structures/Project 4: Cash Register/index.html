@@ -5,33 +5,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="styles.css" />
-  <title>Cash Register
-</title>
+  <title>Cash Register</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Quattrocento&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <h1>Cash Register
-  </h1>
+  
+  <main>
+  <h1>Cash Register</h1>
 
-  <div class="formContainer">
-  <form>
-     <label for="item-select">Select an Item:</label>
-      <select id="item-select">
-        <option value="3.26">🪀 Price: $3.26</option>
-        <option value="19.5">🪁 Price: $19.5</option>
-        <option value="105.05">🚲 Price: $105.05</option>
-      </select>
-      <br>
-    <label type="number" for="cash">Enter Cash Amount:</label>
-    <input id="cash" placeholder="$" />
-    <button type="button" id="purchase-btn" onclick="handlePurchase()">Purchase</button>
-    <div id="change-due"></div>
-  </form>
-</div>
+  <div>
+    <h4 id="toy-price">🪀 Toy Price: $3.26</h4> 
+  </div>
+
+  <!--Customer Change Due-->
+  <div id="change-due"></div>
+
+  <!--Input-->
+  <div class="input-section">
+    <label for="cash" class="customer-label">Customer Cash Input:</label>
+     <div class="input-row">
+    <input type="number" id="cash" class="user-input" value required>
+    <button class="check-btn" id="purchase-btn">Purchase</button>
+    </div>
+  </div>
+
+
+  <div id="cash-register-display">
+    <h2>Change in drawer:</h2>
+    <p>Pennies: $1.01</p>
+    <p>Nickels: $2.05</p>
+    <p>Dimes: $3.1</p>
+    <p>Quarters: $4.25</p>
+    <p>Ones: $90</p>
+    <p>Fives: $55</p>
+    <p>Tens: $20</p>
+    <p>Twenties: $60</p>
+    <p>Hundreds: $100</p>  
+  </div>
+  </main>
 
   <script src="script.js"></script>
   </body>
